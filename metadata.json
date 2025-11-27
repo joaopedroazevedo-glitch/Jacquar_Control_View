@@ -1,5 +1,5 @@
 {
-  "name": "Jacquard Control ",
+  "name": "Jacquard Control Pro",
   "description": "A comprehensive dashboard to monitor and control 10 Jacquard looms, tracking status, clients, articles, and estimated completion times.",
   "requestFramePermissions": []
 }

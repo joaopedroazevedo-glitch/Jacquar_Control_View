@@ -43,13 +43,13 @@ const TearCard: React.FC<TearCardProps> = ({ tear, onClick }) => {
         <div className="flex justify-between items-start mb-2">
           <h3 className="font-bold text-lg mt-0.5">{tear.nome}</h3>
           
-          <div className="flex flex-col items-end gap-1">
-            <span className="flex items-center gap-1 text-sm font-semibold uppercase tracking-wider bg-white/50 px-2 py-1 rounded-md">
+          <div className="flex flex-col items-end gap-2">
+            <span className="flex items-center gap-1 text-sm font-semibold uppercase tracking-wider bg-white/50 px-2 py-1 rounded-md shadow-sm">
               {statusIcons[tear.status]}
               {tear.status}
             </span>
             {tear.prioritario && (
-              <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wide bg-red-100 text-red-700 border border-red-200 shadow-sm">
+              <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wide bg-red-100 text-red-700 border border-red-200 shadow-sm animate-pulse-slow">
                 <Flag className="w-3 h-3 fill-current" />
                 Prioridade Alta
               </div>
