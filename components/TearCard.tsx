@@ -40,26 +40,24 @@ const TearCard: React.FC<TearCardProps> = ({ tear, onClick }) => {
       className={`relative p-4 rounded-xl border-2 transition-all duration-200 hover:shadow-lg cursor-pointer hover:scale-[1.02] flex flex-col justify-between min-h-[220px] ${statusColors[tear.status]} ${tear.prioritario ? 'ring-2 ring-red-400 ring-offset-1' : ''}`}
     >
       <div>
-        <div className="flex justify-between items-center mb-1">
-          <h3 className="font-bold text-lg">{tear.nome}</h3>
-          <span className="flex items-center gap-1 text-sm font-semibold uppercase tracking-wider bg-white/50 px-2 py-1 rounded-md">
-            {statusIcons[tear.status]}
-            {tear.status}
-          </span>
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="font-bold text-lg mt-0.5">{tear.nome}</h3>
+          
+          <div className="flex flex-col items-end gap-1">
+            <span className="flex items-center gap-1 text-sm font-semibold uppercase tracking-wider bg-white/50 px-2 py-1 rounded-md">
+              {statusIcons[tear.status]}
+              {tear.status}
+            </span>
+            {tear.prioritario && (
+              <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wide bg-red-100 text-red-700 border border-red-200 shadow-sm">
+                <Flag className="w-3 h-3 fill-current" />
+                Prioridade Alta
+              </div>
+            )}
+          </div>
         </div>
 
-        {/* Priority Indicator - Below Status */}
-        {tear.prioritario && (
-          <div className="mb-3 inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wide bg-red-100 text-red-700 border border-red-200">
-            <Flag className="w-3 h-3 fill-current" />
-            Prioridade Alta
-          </div>
-        )}
-        
-        {/* Spacer if no priority, to keep alignment if needed, or just let it collapse */}
-        {!tear.prioritario && <div className="mb-3"></div>}
-
-        <div className="space-y-2 text-sm">
+        <div className="space-y-2 text-sm mt-4">
           <div className="flex items-center gap-2 opacity-80">
             <User className="w-4 h-4 shrink-0" />
             <span className="truncate font-medium">{tear.cliente}</span>
